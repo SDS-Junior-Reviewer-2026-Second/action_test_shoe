@@ -36,9 +36,14 @@ jobs:
   TEST:
     needs: build
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        test-group: [1, 2, 3]
+
     steps:
-      - name: Run Test
-        run: echo Test
+      - name: Run Test ${{ matrix.test-group }}
+        run: echo Test group ${{ matrix.test-group }}
 
   DEPLOY:
     needs: [KFC, TEST]
