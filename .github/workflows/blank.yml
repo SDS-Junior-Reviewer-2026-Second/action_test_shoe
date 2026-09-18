@@ -32,3 +32,10 @@ jobs:
 
       - name: Run KFC script
         run: python .github/scripts/kfc.py
+  
+  TEST:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: echo Test
