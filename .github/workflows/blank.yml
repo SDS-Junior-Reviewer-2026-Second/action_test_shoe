@@ -39,3 +39,11 @@ jobs:
     steps:
       - name: Run Test
         run: echo Test
+
+  DEPLOY:
+    needs: [KFC, TEST]
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Run Deploy
+        run: echo Deploy
